@@ -1,13 +1,5 @@
 Date.prototype.toLoggerString = function (type) {
 
-    if(typeof this != "object") {
-        function Half_packageTypeError(message) {
-            this.name = "Uncaught TypeError";
-            this.message = message;
-        }
-        throw new Half_packageTypeError("Uncaught")
-    }
-
     var day = this;
 
     var YYYY = day.getFullYear();
