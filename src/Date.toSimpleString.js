@@ -1,26 +1,18 @@
 Date.prototype.toSimpleString = function (type) {
 
-    if(typeof this != "object") {
-        function Half_packageTypeError(message) {
-            this.name = "Uncaught TypeError";
-            this.message = message;
-        }
-        throw new Half_packageTypeError("Uncaught")
-    }
-
     var day = this;
 
     var YYYY = day.getFullYear();
     var MM = day.getMonth() + 1;
-    MM = (MM <= 9 ? '0'+ MM : MM);
+    MM = ("0" + MM).slice(-2);
     var dd = day.getDate();
-    dd = (dd <= 9 ? '0'+ dd : dd);
+    dd = ("0" + dd).slice(-2);
     var HH = day.getHours();
-    HH = (HH <= 9 ? '0' + HH : HH);
+    HH = ("0" + HH).slice(-2);
     var mm = day.getMinutes();
-    mm = (mm <= 9 ? '0' + mm : mm);
+    mm = ("0" + mm).slice(-2);
     var ss = day.getSeconds();
-    ss = (ss <= 9 ? '0' + ss : ss);
+    ss = ("0" + ss).slice(-2);
 
     if(type == null || type == 0) {
         return YYYY + "-" + MM + "-" + dd + " " + HH + ":" + mm + ":" + ss;
